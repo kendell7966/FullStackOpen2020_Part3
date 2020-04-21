@@ -4,7 +4,16 @@ var morgan = require('morgan')
 const app = express()
 
 app.use(express.json()) // enables "json-parser"
-app.use(morgan('tiny'))
+
+morgan.token('detail', function getDetail(request) {
+    if (request.method != 'POST') {
+        return ''
+    }
+
+    return JSON.stringify(request.body)
+})
+
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :detail'))
 
 let persons = [
     {
