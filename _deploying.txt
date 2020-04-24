@@ -1,0 +1,17 @@
+
+Deploying locally uses values in: .env
+
+Deploying to production:
+
+You must use the following Heroku command to set the connection string:
+heroku config:set MONGODB_URI=mongodb+srv://fullstack:CtER5pyeZGUoJe52@cluster0-xtzm7.mongodb.net/phonebook-app?retryWrites=true
+
+It seemed to work if the value is NOT surrounded by apostrophies.
+
+The PORT will be automatically setup in the production environment.
+
+
+
+
+
+
